@@ -177,7 +177,7 @@
       display: grid;
       /* grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); */
       grid-template-columns: repeat(1, 1fr);
-      max-width: 1000px;
+      max-width: 800px;
       margin: 0 auto;
       gap: 1.5px; /* hairline grid gaps */
       background: var(--line);
@@ -222,7 +222,8 @@
       transition: transform 0.35s ease;
     }
     .carousel-track img,
-    .carousel-track video {
+    .carousel-track video, 
+    .carousel-track iframe {
       flex: 0 0 100%;
       width: 100%; height: 100%;
       object-fit: cover;
@@ -805,7 +806,12 @@
       <article class="card fade-up">
         <div class="card-media">
           <div class="carousel-track">
-            <video src="images/Self Balancing Robot/cat-bot.mov" controls playsinline></video>
+            <iframe 
+              src="https://www.youtube.com/embed/on7uKnv0-k0" 
+              frameborder="0" 
+              allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
             <img src="images/Self Balancing Robot/SelfBalancingRobot_side.jpeg" alt="View 1" />
             <img src="images/Self Balancing Robot/robot_top_front.jpg" alt="View 2" />
             <img src="images/Self Balancing Robot/robot_top.jpg" alt="View 3" />
@@ -856,7 +862,12 @@
       <article class="card fade-up">
         <div class="card-media">
           <div class="carousel-track">
-            <video src="images/Metal Detecting Robot/ELEC 291 Project 2 Reduced Quality Video.mp4" controls playsinline></video>
+            <iframe 
+            src="https://www.youtube.com/embed/1Xb2agxM5IU" 
+            frameborder="0" 
+            allowfullscreen
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+          </iframe>
             <img src="images/Metal Detecting Robot/robot_side.jpg" alt="View 1" />
             <img src="images/Metal Detecting Robot/remote1_top.jpg" alt="View 2" />
             <img src="images/Metal Detecting Robot/remote2_top.jpg" alt="View 3" />
@@ -881,7 +892,6 @@
       <article class="card fade-up">
         <div class="card-media">
           <div class="carousel-track">
-            <video src="images/Oven Controller/oven_controller_reduced.mp4" controls playsinline></video>
             <img src="images/Oven Controller/Controller_top.png" alt="View 1" />
             <img src="images/Oven Controller/Graph.png" alt="View 2" />
           </div>
@@ -921,7 +931,7 @@
 
       <!-- ── CARD 9 ── -->
       <article class="card fade-up">
-        <div class="card-media">
+        <div class="card-media" style="aspect-ratio: 16/9;">
           <div class="carousel-track">
             <iframe
               src="https://www.youtube.com/embed/OsysCvcPbQE"
