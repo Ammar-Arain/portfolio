@@ -204,6 +204,10 @@
       overflow: hidden;
       position: relative;
     }
+
+    .fit-image {
+      object-fit: contain !important;
+    }
     /* Empty placeholder */
     .card-media.empty {
       display: flex; align-items: center; justify-content: center;
@@ -829,7 +833,7 @@
       <article class="card fade-up">
         <div class="card-media">
           <div class="carousel-track">
-            <img src="images/FC.gif" alt="View 1" />
+            <img src="images/FC.gif" alt="View 1" class="fit-image" />
             <img src="images/FC Schematic.png" alt="View 2" />
           </div>
         </div>
