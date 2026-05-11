@@ -797,10 +797,32 @@
   <section id="personal">
     <div class="section-header">
       <h2 class="section-title">Personal Projects</h2>
-      <span class="section-count">06 projects</span>
+      <span class="section-count">08 projects</span>
     </div>
 
     <div class="projects-grid">
+
+      <!-- ── CARD 3 ── -->
+      <article class="card fade-up">
+        <div class="card-media">
+          <div class="carousel-track">
+            <img src="images/RC4/key.gif" alt="View 1" />
+          </div>
+        </div>
+        <div class="card-meta">
+          <span class="card-year">2026</span>
+          <div class="card-tags">
+            <span class="tag">SystemVerilog</span>
+            <span class="tag">RTL Design</span>
+            <span class="tag">Test Benches</span>
+            <span class="tag">FPGA Development</span>
+          </div>
+        </div>
+        <h3 class="card-title">ARC4 Stream Cipher Cracker</h3>
+        <p class="card-desc">I designed and implemented, in SystemVerilog, a parallel brute-force key-cracking engine using two simultaneous decryption cores, each searching a disjoint half of the 24-bit key space, achieving roughly 2x speedup over a single core-implementation.</p>
+        <p class="card-desc">The project involved building the complete ARC4 algorithm from scratch, including state initialization, key-scheduling and pseudo-random byte generation across modular hardware components communicating via a ready/enable handshake protocol. 
+        The on-chip M10K SRAM blocks were used extensively for cipher state and message storage, and correctness was verified through RTL and post-synthesis simulation testbenches. The design was also deployed on a physical DE1-SoC FPGA board, where correct decryption was verified by inspecting live memory contents and decoded key values on the seven-segment displays.</p>
+      </article>
 
       <!-- ── CARD 4 ── -->
       <article class="card fade-up">
