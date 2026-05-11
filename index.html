@@ -803,7 +803,7 @@
 
     <div class="projects-grid">
 
-      <!-- ── CARD 3 ── -->
+      <!-- ── CARD 2 ── -->
       <article class="card fade-up">
         <div class="card-media">
           <div class="carousel-track">
@@ -823,6 +823,31 @@
         <p class="card-desc">I designed and implemented, in SystemVerilog, a parallel brute-force key-cracking engine using two simultaneous decryption cores, each searching a disjoint half of the 24-bit key space, achieving roughly 2x speedup over a single core-implementation.</p>
         <p class="card-desc">The project involved building the complete ARC4 algorithm from scratch, including state initialization, key-scheduling and pseudo-random byte generation across modular hardware components communicating via a ready/enable handshake protocol. 
         The on-chip M10K SRAM blocks were used extensively for cipher state and message storage, and correctness was verified through RTL and post-synthesis simulation testbenches. The design was also deployed on a physical DE1-SoC FPGA board, where correct decryption was verified by inspecting live memory contents and decoded key values on the seven-segment displays.</p>
+      </article>
+
+      <!-- ── CARD 3 ── -->
+      <article class="card fade-up">
+        <div class="card-media">
+          <div class="carousel-track">
+            <img src="images/FC.gif" alt="View 1" />
+            <img src="images/FC Schematic.png" alt="View 2" />
+          </div>
+        </div>
+        <div class="card-meta">
+          <span class="card-year">2026</span>
+          <div class="card-tags">
+            <span class="tag">PCB Design</span>
+            <span class="tag">Altium</span>
+            <span class="tag">PCB Assembly</span>
+            <span class="tag">Flight Controller</span>
+          </div>
+        </div>
+        <h3 class="card-title">High-Density H743 Flight Controller PCB Design</h3>
+        <p class="card-desc">I designed this 4-layer PCB flight controller using STM32H743 to support a 13-servo payload with a custom power architecture using four independent buck convertors for redundancy and to isolate noise.</p>
+        <p class="card-desc">This board features built in IMU, barometer, analog OSD video chip, CAN tranceiver, SPI flash memory and multiple connectors/headerpins for external SPI, UART and CAN sensors. I have also included a built in option to enable a 120 ohm terminator resistor for the CAN bus. To ensure reliability,
+          I added in ESD protection on both the USB and CAN connectors as well as overvoltage and reverse polarity protection on the power pads. As a way to future proof the design for my needs, I added both analog and digital video OSD. 
+        High-speed traces were routed as short as physically possible and are surrounded a ground plane to protect against noise. </p>
+        <p class="card-desc">This project demonstrates my ability to bridge the gap between custom PCB layout and low-level firmware integration.</p>
       </article>
 
       <!-- ── CARD 4 ── -->
