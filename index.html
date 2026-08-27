@@ -296,13 +296,24 @@
       flex: 1;
     }
     .card-links {
-      display: flex; gap: 1rem; padding-top: 0.5rem;
-      border-top: 1px solid var(--line);
+      display: flex; gap: 1rem; padding-top: 1rem;
+      margin-top: 0.5rem;
     }
     .card-link { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; color: var(--ink-muted); transition: color 0.2s; }
     .card-link:hover { color: var(--accent); }
     .card-link.primary { color: var(--accent); }
     .card-link.primary:hover { color: var(--ink); }
+    .card-btn {
+      display: inline-block;
+      background: var(--accent2);
+      color: #ffffff;
+      padding: 0.55rem 1.25rem;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      transition: opacity 0.2s;
+    }
+    .card-btn:hover { opacity: 0.85; }
 
     /* ── COMPANY BADGE ── */
     .company-badge {
@@ -631,7 +642,8 @@
       border-color: rgba(160,80,255,0.25);
       color: #c090ff;
     }
-    body.space-mode .btn-primary {
+    body.space-mode .btn-primary,
+    body.space-mode .card-btn {
       background: #7030c0;
       color: #f0ede8;
     }
@@ -807,6 +819,63 @@
 
     <div class="projects-grid">
 
+      <!-- ── CARD 3 ── -->
+      <article class="card fade-up">
+        <div class="card-media">
+          <div class="carousel-track">
+            <img src="images/FC_PinOut(LowQualityImg).png" alt="View 1" class="fit-image" />
+            <img src="images/FC.gif" alt="View 1" class="fit-image" />
+            <img src="images/FC Schematic.png" alt="View 2" />
+          </div>
+        </div>
+        <div class="card-meta">
+          <span class="card-year">2026</span>
+          <div class="card-tags">
+            <span class="tag">PCB Design</span>
+            <span class="tag">Altium</span>
+            <span class="tag">PCB Assembly</span>
+            <span class="tag">Flight Controller</span>
+          </div>
+        </div>
+        <h3 class="card-title">High-Density H743 Flight Controller PCB Design</h3>
+        <p class="card-desc">I designed this 4-layer PCB flight controller using STM32H743 to support a 13-servo payload with a custom power architecture using four independent buck convertors for redundancy and to isolate noise.</p>
+        <p class="card-desc">This board features built in IMU, barometer, analog OSD video chip, CAN tranceiver, SPI flash memory and multiple connectors/headerpins for external SPI, UART and CAN sensors. I have also included a built in option to enable a 120 ohm terminator resistor for the CAN bus. To ensure reliability,
+          I added in ESD protection on both the USB and CAN connectors as well as overvoltage and reverse polarity protection on the power pads. As a way to future proof the design for my needs, I added both analog and digital video OSD. 
+        High-speed traces were routed as short as physically possible and are surrounded by a ground plane to protect against noise. </p>
+        <p class="card-desc">This project demonstrates my ability to bridge the gap between custom PCB layout and low-level firmware integration.</p>
+        <div class="card-links">
+          <a href="files/FC_V1_Datasheet.pdf" class="card-btn" target="_blank" rel="noopener">Read Datasheet ↗</a>
+        </div>
+      </article>
+
+      <!-- ── CARD Stallion VTOL ── -->
+      <article class="card fade-up">
+        <div class="card-media">
+          <div class="carousel-track">
+            <img src="images/Stallion_VTOL/Stallion_VTOL.jpg" alt="View 1" class="fit-image" />
+            <video src="images/Stallion_VTOL/Stallion_VTOL_Vertical.mov" class="fit-image" controls playsinline muted loop></video>
+          </div>
+        </div>
+        <div class="card-meta">
+          <span class="card-year">2025-2026</span>
+          <div class="card-tags">
+            <span class="tag">ArduPilot</span>
+            <span class="tag">UAS</span>
+            <span class="tag">Integration</span>
+            <span class="tag">3D Print</span>
+          </div>
+        </div>
+        <h3 class="card-title">Autonomous Vertical Take-off and Landing Aircraft</h3>
+        <p class="card-desc">The reasoning behind building a VTOL was to combine the advantages of a quad-copter and a conventional airplane.
+                            I would be able to get the extended range of an airplane with wings while also being able to take-off and land from a tight space, without a need for a runway.  </p>
+        <p class="card-desc">I built this aircraft using a 3D printed model of the Stallion by Flightory.
+                            It offers a tri-motor configuration instead of quad-motor to reduce "dead-weight" during horizontal flight. 
+                            It's capable of completing waypoint missions autonomously using ArduPilot and is also controllable using a remote. </p>
+        <p class="card-desc">This project mainly involved using off-the-shelf modules but also required me to make some custom parts,
+                            such as a PCB breakout board for sending telemetry to a ground station, designing a CAD model for the flight controller mount and modifying the aircraft design to use 
+                            parts I had available on me. This project taught me quite a bit about picking the right components for the job, along with integrating the electronic modules and the mechanical parts of the aircraft together. </p>
+        </article>
+
       <!-- ── CARD 2 ── -->
       <article class="card fade-up">
         <div class="card-media">
@@ -829,30 +898,7 @@
         The on-chip M10K SRAM blocks were used extensively for cipher state and message storage, and correctness was verified through RTL and post-synthesis simulation testbenches. The design was also deployed on a physical DE1-SoC FPGA board, where correct decryption was verified by inspecting live memory contents and decoded key values on the seven-segment displays.</p>
       </article>
 
-      <!-- ── CARD 3 ── -->
-      <article class="card fade-up">
-        <div class="card-media">
-          <div class="carousel-track">
-            <img src="images/FC.gif" alt="View 1" class="fit-image" />
-            <img src="images/FC Schematic.png" alt="View 2" />
-          </div>
-        </div>
-        <div class="card-meta">
-          <span class="card-year">2026</span>
-          <div class="card-tags">
-            <span class="tag">PCB Design</span>
-            <span class="tag">Altium</span>
-            <span class="tag">PCB Assembly</span>
-            <span class="tag">Flight Controller</span>
-          </div>
-        </div>
-        <h3 class="card-title">High-Density H743 Flight Controller PCB Design</h3>
-        <p class="card-desc">I designed this 4-layer PCB flight controller using STM32H743 to support a 13-servo payload with a custom power architecture using four independent buck convertors for redundancy and to isolate noise.</p>
-        <p class="card-desc">This board features built in IMU, barometer, analog OSD video chip, CAN tranceiver, SPI flash memory and multiple connectors/headerpins for external SPI, UART and CAN sensors. I have also included a built in option to enable a 120 ohm terminator resistor for the CAN bus. To ensure reliability,
-          I added in ESD protection on both the USB and CAN connectors as well as overvoltage and reverse polarity protection on the power pads. As a way to future proof the design for my needs, I added both analog and digital video OSD. 
-        High-speed traces were routed as short as physically possible and are surrounded by a ground plane to protect against noise. </p>
-        <p class="card-desc">This project demonstrates my ability to bridge the gap between custom PCB layout and low-level firmware integration.</p>
-      </article>
+      
 
       <!-- ── CARD 4 ── -->
       <article class="card fade-up">
